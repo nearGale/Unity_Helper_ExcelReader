@@ -240,19 +240,19 @@ public class ExcelCodeCreater
         }
         else if (type == "int[]" || type == "Int[]" || type == "INT[]")
         {
-            return $"{stringValue}.Split(';').Select(x => Convert.ToInt32(x)).ToList()";
+            return $"{stringValue} == null ? new() : {stringValue}.Split(';').Select(x => Convert.ToInt32(x)).ToList()";
         }
         else if (type == "float[]" || type == "Float[]" || type == "FLOAT[]")
         {
-            return $"{stringValue}.Split(';').Select(x => Convert.ToSingle(x)).ToList()";
+            return $"{stringValue} == null ? new() : {stringValue}.Split(';').Select(x => Convert.ToSingle(x)).ToList()";
         }
         else if (type == "bool[]" || type == "Bool[]" || type == "BOOL[]")
         {
-            return $"{stringValue}.Split(';').Select(x => Convert.ToBoolean(x)).ToList()";
+            return $"{stringValue} == null ? new() : {stringValue}.Split(';').Select(x => Convert.ToBoolean(x)).ToList()";
         }
         else if (type == "string[]" || type == "String[]" || type == "STRING[]")
         {
-            return $"{stringValue}.Split(';').ToList()";
+            return $"{stringValue} == null ? new() : {stringValue}.Split(';').ToList()";
         }
         else
             return stringValue;
