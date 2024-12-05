@@ -30,3 +30,6 @@ partical 重写 ExcelItem toString():
 
 测试读取：
 ![image](https://github.com/user-attachments/assets/2ae22417-8682-4897-9aa4-623c21760805)
+
+支持枚举和数组：
+![image](https://github.com/user-attachments/assets/9e5f0706-16e2-4174-b8b9-5c72817aafcc)
