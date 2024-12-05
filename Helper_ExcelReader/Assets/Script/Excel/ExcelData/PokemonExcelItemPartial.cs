@@ -6,11 +6,14 @@ public partial class PokemonExcelItem
 {
     public override string ToString()
     {
-        var str = $"id:{id} {name} " +
+        var str = $"id:{id} " +
+            $"{name} " +
             $"attackTendency:{attackTendency} " +
             $"hp:{basicHp} " +
-            $"attack:{basicAttack} " +
-            $"defender:{basicDefender}";
+            $"atk:{basicAttack} " +
+            $"def:{basicDefender} " +
+            $"otherParam:[{string.Join(',', otherParam)}] " +
+            $"strParam:[{string.Join(',', stringParam)}] ";
         return str;
     }
 }

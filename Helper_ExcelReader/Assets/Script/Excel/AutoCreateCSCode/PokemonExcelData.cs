@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using System.IO;
+using System.Linq;
 
 [Serializable]
 public partial class PokemonExcelItem : ExcelItemBase
@@ -13,6 +14,8 @@ public partial class PokemonExcelItem : ExcelItemBase
 	public float basicHp;
 	public float basicAttack;
 	public float basicDefender;
+	public List<int> otherParam;
+	public List<string> stringParam;
 }
 
 [CreateAssetMenu(fileName = "PokemonExcelData", menuName = "Excel To ScriptableObject/Create PokemonExcelData", order = 1)]
@@ -38,6 +41,8 @@ public class PokemonAssetAssignment
 			items[i].basicHp = Convert.ToSingle(allItemValueRowList[i]["basicHp"]);
 			items[i].basicAttack = Convert.ToSingle(allItemValueRowList[i]["basicAttack"]);
 			items[i].basicDefender = Convert.ToSingle(allItemValueRowList[i]["basicDefender"]);
+			items[i].otherParam = allItemValueRowList[i]["otherParam"].Split(';').Select(x => Convert.ToInt32(x)).ToList();
+			items[i].stringParam = allItemValueRowList[i]["stringParam"].Split(';').ToList();
 		}
 		PokemonExcelData excelDataAsset = ScriptableObject.CreateInstance<PokemonExcelData>();
 		excelDataAsset.items = items;

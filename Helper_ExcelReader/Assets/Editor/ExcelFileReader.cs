@@ -304,16 +304,30 @@ public static class ExcelFileReader
         }
     }
 
-    //写文件
-    private static bool WriteCodeStrToSave(string writeFilePath, string codeFileName, string classCodeStr)
+    /// <summary>
+    /// 写文件
+    /// </summary>
+    /// <param name="folderPath">文件夹路径</param>
+    /// <param name="codeFileName">文件名</param>
+    /// <param name="classCodeStr">文件内容</param>
+    /// <returns></returns>
+    private static bool WriteCodeStrToSave(string folderPath, string codeFileName, string classCodeStr)
     {
         if (string.IsNullOrEmpty(codeFileName) || string.IsNullOrEmpty(classCodeStr))
             return false;
-        //检查导出路径
-        if (!Directory.Exists(writeFilePath))
-            Directory.CreateDirectory(writeFilePath);
-        //写文件，生成CS类文件
-        StreamWriter sw = new StreamWriter(writeFilePath + "/" + codeFileName + ".cs");
+
+        // 检查导出路径
+        if (!Directory.Exists(folderPath))
+            Directory.CreateDirectory(folderPath);
+
+        var filePath = folderPath + "/" + codeFileName + ".cs";
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
+        }
+
+        // 写文件，生成CS类文件
+        StreamWriter sw = new StreamWriter(filePath);
         sw.WriteLine(classCodeStr);
         sw.Close();
         //

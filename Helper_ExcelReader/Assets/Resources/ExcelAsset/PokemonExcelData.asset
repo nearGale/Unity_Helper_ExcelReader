@@ -19,15 +19,27 @@ MonoBehaviour:
     basicHp: 100
     basicAttack: 120
     basicDefender: 60
+    otherParam: 010000000200000003000000
+    stringParam:
+    - a
+    - b
+    - c
   - id: 2
     name: "\u5999\u86D9\u79CD\u5B50"
     attackTendency: 1
     basicHp: 120
     basicAttack: 100
     basicDefender: 50
+    otherParam: 040000000500000006000000
+    stringParam:
+    - de
+    - f
   - id: 3
     name: "\u6770\u5C3C\u9F9F"
     attackTendency: 2
     basicHp: 150
     basicAttack: 80
     basicDefender: 80
+    otherParam: 070000000800000009000000
+    stringParam:
+    - xyz

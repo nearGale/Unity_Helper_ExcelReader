@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
 using System.Linq;
+using System;
 
 public class ExcelCodeCreater
 {
@@ -49,6 +50,7 @@ public class ExcelCodeCreater
         classSource.Append("using System.Collections.Generic;\n");
         classSource.Append("using System;\n");
         classSource.Append("using System.IO;\n");
+        classSource.Append("using System.Linq;\n");
         classSource.Append("\n");
         // 生成行数据类，记录每行数据
         classSource.Append(CreateExcelRowItemClass(itemClassName, propertyNameTypeDic));
@@ -104,6 +106,14 @@ public class ExcelCodeCreater
             type = "bool";
         else if (type.StartsWith("enum") || type.StartsWith("Enum") || type.StartsWith("ENUM"))
             type = type.Split('|').LastOrDefault();
+        else if (type == "int[]" || type == "Int[]" || type == "INT[]")
+            type = "List<int>";
+        else if (type == "float[]" || type == "Float[]" || type == "FLOAT[]")
+            type = "List<float>";
+        else if (type == "bool[]" || type == "Bool[]" || type == "BOOL[]")
+            type = "List<bool>";
+        else if (type == "string[]" || type == "String[]" || type == "STRING[]")
+            type = "List<string>";
         else
             type = "string";
         // 声明
@@ -227,6 +237,22 @@ public class ExcelCodeCreater
         {
             var enumName = type.Split('|').LastOrDefault();
             return $"Enum.Parse<{enumName}>({stringValue})";
+        }
+        else if (type == "int[]" || type == "Int[]" || type == "INT[]")
+        {
+            return $"{stringValue}.Split(';').Select(x => Convert.ToInt32(x)).ToList()";
+        }
+        else if (type == "float[]" || type == "Float[]" || type == "FLOAT[]")
+        {
+            return $"{stringValue}.Split(';').Select(x => Convert.ToSingle(x)).ToList()";
+        }
+        else if (type == "bool[]" || type == "Bool[]" || type == "BOOL[]")
+        {
+            return $"{stringValue}.Split(';').Select(x => Convert.ToBoolean(x)).ToList()";
+        }
+        else if (type == "string[]" || type == "String[]" || type == "STRING[]")
+        {
+            return $"{stringValue}.Split(';').ToList()";
         }
         else
             return stringValue;
