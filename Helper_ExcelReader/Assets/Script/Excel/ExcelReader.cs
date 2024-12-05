@@ -6,7 +6,7 @@ public class ExcelReader : MonoBehaviour
 {
     void Start()
     {
-        using (var stream = File.Open(Application.dataPath + @"/Excels/神奇宝贝.xlsx", FileMode.Open, FileAccess.Read))
+        using (var stream = File.Open(Application.dataPath + @"/Excel/Pokemon.xlsx", FileMode.Open, FileAccess.Read))
         {
             using (var reader = ExcelReaderFactory.CreateReader(stream))
             {

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d91f5ce162cfe46bc1b80404fa3d5c, type: 3}
+  m_Name: BuffExcelData
+  m_EditorClassIdentifier: 
+  items:
+  - id: 1
+    name: buffA
+    buffType: 100
+    param: 150
+  - id: 2
+    name: buffB
+    buffType: 120
+    param: 60
+  - id: 3
+    name: buffQ
+    buffType: 80
+    param: 110
