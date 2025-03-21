@@ -1,0 +1,7 @@
+1、路径配置文件：Assets/ExcelReader/ExcelReaderParam.cs
+	默认路径：
+		Excel读取路径：Assets/ExcelReader/Example/Excel/
+		自动生成C#类文件路径：Assets/ExcelReader/Example/AutoCreateCSCode/
+		自动生成Asset文件路径：Assets/Resources/ExcelAsset/
+2、表格对应枚举示例：在代码中先声明，如：Example/WhatICanDo/GlobalEnum.cs
+3、表格内容可以partial，进行功能扩展，如：Example/WhatICanDo/PokemonExcelItemPartial.cs

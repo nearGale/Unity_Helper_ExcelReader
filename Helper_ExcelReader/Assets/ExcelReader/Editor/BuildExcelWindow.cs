@@ -108,17 +108,17 @@ namespace ExcelDataReader.Editor
             fileNameList.Clear();
             filePathList.Clear();
 
-            if (!Directory.Exists(ExcelFileReader.excelFilePath))
+            if (!Directory.Exists(ExcelReaderParam.ExcelFilePath))
             {
-                showNotify = "无效路径：" + ExcelFileReader.excelFilePath;
+                showNotify = "无效路径：" + ExcelReaderParam.ExcelFilePath;
                 return;
             }
 
-            string[] excelFileFullPaths = Directory.GetFiles(ExcelFileReader.excelFilePath, "*.xlsx");
+            string[] excelFileFullPaths = Directory.GetFiles(ExcelReaderParam.ExcelFilePath, "*.xlsx");
 
             if (excelFileFullPaths == null || excelFileFullPaths.Length == 0)
             {
-                showNotify = ExcelFileReader.excelFilePath + "路径下没有找到Excel文件";
+                showNotify = ExcelReaderParam.ExcelFilePath + "路径下没有找到Excel文件";
                 return;
             }
 

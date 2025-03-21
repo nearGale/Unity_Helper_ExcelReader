@@ -19,17 +19,6 @@ namespace ExcelDataReader.Editor
         /// <summary> Excel第5行及以后对应字段值 </summary>
         const int excelDataRow = 5;
 
-
-        /// <summary> Excel读取路径 </summary>
-        //public static string excelFilePath = Application.dataPath.Replace("Assets", "Excel");
-        public static string excelFilePath = Application.dataPath + "/Excel";
-
-        /// <summary> 自动生成C#类文件路径 </summary>
-        static string excelCodePath = Application.dataPath + "/Script/Excel/AutoCreateCSCode";
-
-        /// <summary> 自动生成Asset文件路径 </summary>
-        static string excelAssetPath = "Assets/Resources/ExcelAsset";
-
         #region ====== Read Excel ======
 
         /// <summary>
@@ -39,7 +28,7 @@ namespace ExcelDataReader.Editor
         {
             // 读取所有Excel文件
             // 指定目录中与指定的搜索模式和选项匹配的文件的完整名称（包含路径）的数组；如果未找到任何文件，则为空数组。
-            string[] excelFileFullPaths = Directory.GetFiles(excelFilePath, "*.xlsx");
+            string[] excelFileFullPaths = Directory.GetFiles(ExcelReaderParam.ExcelFilePath, "*.xlsx");
 
             if (excelFileFullPaths == null || excelFileFullPaths.Length == 0)
             {
@@ -69,7 +58,10 @@ namespace ExcelDataReader.Editor
                 if (!string.IsNullOrEmpty(classCodeStr))
                 {
                     // 写文件，生成 ExcelData.cs
-                    if (WriteCodeStrToSave(excelCodePath, excelMediumData.excelName + "ExcelData", classCodeStr))
+                    if (WriteCodeStrToSave(
+                        ExcelReaderParam.AutoGenExcelDataCodePath,
+                        excelMediumData.excelName + "ExcelData",
+                        classCodeStr))
                     {
                         Debug.Log("<color=green>Auto Create Excel Scripts Success : </color>" +
                                   excelMediumData.excelName);
@@ -94,7 +86,7 @@ namespace ExcelDataReader.Editor
         {
             // 读取所有 Excel 文件
             // 指定目录中与指定的搜索模式和选项匹配的文件的完整名称（包含路径）的数组；如果未找到任何文件，则为空数组。
-            string[] excelFileFullPaths = Directory.GetFiles(excelFilePath, "*.xlsx");
+            string[] excelFileFullPaths = Directory.GetFiles(ExcelReaderParam.ExcelFilePath, "*.xlsx");
             if (excelFileFullPaths == null || excelFileFullPaths.Length == 0)
             {
                 Debug.LogError("CreateAllExcelAsset(): Excel file count == 0");
@@ -142,7 +134,11 @@ namespace ExcelDataReader.Editor
                     MethodInfo methodInfo = type.GetMethod("CreateAsset");
                     if (methodInfo != null)
                     {
-                        methodInfo.Invoke(null, new object[] { excelMediumData.allItemValueRowList, excelAssetPath });
+                        methodInfo.Invoke(null, new object[]
+                        {
+                            excelMediumData.allItemValueRowList,
+                            ExcelReaderParam.ExcelAssetPath
+                        });
                         // 创建Asset文件成功
                         Debug.Log("<color=green>Auto Create Excel Asset Success : </color>" +
                                   excelMediumData.excelName);
