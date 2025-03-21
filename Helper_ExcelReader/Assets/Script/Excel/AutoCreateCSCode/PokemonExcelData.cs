@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System;
 using System.IO;
 using System.Linq;
+using ExcelDataReader;
 
 [Serializable]
 public partial class PokemonExcelItem : ExcelItemBase
@@ -41,8 +42,8 @@ public class PokemonAssetAssignment
 			items[i].basicHp = Convert.ToSingle(allItemValueRowList[i]["basicHp"]);
 			items[i].basicAttack = Convert.ToSingle(allItemValueRowList[i]["basicAttack"]);
 			items[i].basicDefender = Convert.ToSingle(allItemValueRowList[i]["basicDefender"]);
-			items[i].otherParam = allItemValueRowList[i]["otherParam"].Split(';').Select(x => Convert.ToInt32(x)).ToList();
-			items[i].stringParam = allItemValueRowList[i]["stringParam"].Split(';').ToList();
+			items[i].otherParam = allItemValueRowList[i]["otherParam"] == null ? new() : allItemValueRowList[i]["otherParam"].Split(';').Select(x => Convert.ToInt32(x)).ToList();
+			items[i].stringParam = allItemValueRowList[i]["stringParam"] == null ? new() : allItemValueRowList[i]["stringParam"].Split(';').ToList();
 		}
 		PokemonExcelData excelDataAsset = ScriptableObject.CreateInstance<PokemonExcelData>();
 		excelDataAsset.items = items;

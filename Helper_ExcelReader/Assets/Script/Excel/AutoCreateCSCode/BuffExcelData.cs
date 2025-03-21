@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System;
 using System.IO;
 using System.Linq;
+using ExcelDataReader;
 
 [Serializable]
 public partial class BuffExcelItem : ExcelItemBase
