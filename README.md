@@ -6,7 +6,7 @@
 
 支持枚举和数组类型。
 
-已屏蔽excel打开时的临时文件（`$xxx.xlsx）
+已屏蔽excel打开时的临时文件（~$xxx.xlsx）
 
 #### 工程结构：
 ![image](https://github.com/user-attachments/assets/c34ac7d2-966f-4578-8309-94f55247d9f1)
