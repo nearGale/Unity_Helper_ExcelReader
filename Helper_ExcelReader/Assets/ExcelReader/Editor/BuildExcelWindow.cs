@@ -27,7 +27,8 @@ namespace ExcelDataReader.Editor
             //BuildExcelWindow buildExcelWindow = GetWindow<BuildExcelWindow>();
             //buildExcelWindow.Show();
             //显示操作窗口方式二
-            EditorWindow.GetWindow(typeof(BuildExcelWindow));
+            Rect _rect = new Rect(0, 0, 815, 500);
+            EditorWindow.GetWindowWithRect(typeof(BuildExcelWindow), _rect);
         }
 
         private string showNotify;
@@ -60,36 +61,84 @@ namespace ExcelDataReader.Editor
             scrollPosition = GUILayout.BeginScrollView(scrollPosition,
                 GUILayout.Width(position.width), GUILayout.Height(position.height));
 
+            // 刷新表格文件路径
+            if (GUILayout.Button("Reload", GUILayout.Width(200), GUILayout.Height(30)))
+            {
+                GetExcelFile();
+            }
+
             // 自动创建C#脚本
             GUILayout.Space(10);
-            GUILayout.Label("Excel To Script");
-            for (int i = 0; i < fileNameList.Count; i++)
-            {
-                if (GUILayout.Button(fileNameList[i], GUILayout.Width(200), GUILayout.Height(30)))
-                {
-                    SelectExcelToCodeByIndex(i);
-                }
-            }
+
+            EditorGUILayout.BeginHorizontal();
+
+            GUILayout.Label("Excel 2 Script", GUILayout.Width(100), GUILayout.Height(30));
 
             if (GUILayout.Button("All Excel", GUILayout.Width(200), GUILayout.Height(30)))
             {
                 SelectExcelToCodeByIndex(-1);
             }
 
-            // 自动创建Asset文件
-            GUILayout.Space(20);
-            GUILayout.Label("Script To Asset");
+            EditorGUILayout.EndHorizontal();
+
+
+            int lineCount = fileNameList.Count / 4;
+            bool fullLine = fileNameList.Count % 4 == 0;
+
             for (int i = 0; i < fileNameList.Count; i++)
             {
+                if(i % 4 == 0)
+                {
+                    EditorGUILayout.BeginHorizontal();
+                }
                 if (GUILayout.Button(fileNameList[i], GUILayout.Width(200), GUILayout.Height(30)))
                 {
-                    SelectCodeToAssetByIndex(i);
+                    SelectExcelToCodeByIndex(i);
+                }
+                if (i % 4 == 3)
+                {
+                    EditorGUILayout.EndHorizontal();
                 }
             }
+
+            if (!fullLine)
+            {
+                EditorGUILayout.EndHorizontal();
+            }
+
+            // 自动创建Asset文件
+            GUILayout.Space(20);
+
+            EditorGUILayout.BeginHorizontal();
+            GUILayout.Label("Script 2 Asset", GUILayout.Width(100), GUILayout.Height(30));
 
             if (GUILayout.Button("All Excel", GUILayout.Width(200), GUILayout.Height(30)))
             {
                 SelectCodeToAssetByIndex(-1);
+            }
+            EditorGUILayout.EndHorizontal();
+
+
+
+
+            for (int i = 0; i < fileNameList.Count; i++)
+            {
+                if (i % 4 == 0)
+                {
+                    EditorGUILayout.BeginHorizontal();
+                }
+                if (GUILayout.Button(fileNameList[i], GUILayout.Width(200), GUILayout.Height(30)))
+                {
+                    SelectCodeToAssetByIndex(i);
+                }
+                if (i % 4 == 3)
+                {
+                    EditorGUILayout.EndHorizontal();
+                }
+            }
+            if (!fullLine)
+            {
+                EditorGUILayout.EndHorizontal();
             }
 
             //

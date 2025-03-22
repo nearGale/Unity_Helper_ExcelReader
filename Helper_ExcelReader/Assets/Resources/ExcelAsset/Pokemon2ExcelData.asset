@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755e12205b8ba2d4c889b5b2dcdb5976, type: 3}
+  m_Name: Pokemon2ExcelData
+  m_EditorClassIdentifier: 
+  items:
+  - id: 1
+    name: "\u76AE\u5361\u4E18"
+    attackTendency: 0
+    basicHp: 100
+    basicAttack: 120
+    basicDefender: 60
+    otherParam: 010000000200000003000000
+    stringParam:
+    - a
+    - b
+    - c
+  - id: 2
+    name: "\u5999\u86D9\u79CD\u5B50"
+    attackTendency: 1
+    basicHp: 120
+    basicAttack: 100
+    basicDefender: 50
+    otherParam: 040000000500000006000000
+    stringParam:
+    - de
+    - f
+  - id: 3
+    name: "\u6770\u5C3C\u9F9F"
+    attackTendency: 2
+    basicHp: 150
+    basicAttack: 80
+    basicDefender: 80
+    otherParam: 070000000800000009000000
+    stringParam:
+    - "\u6770\u5C3C\u6770\u5C3C"
