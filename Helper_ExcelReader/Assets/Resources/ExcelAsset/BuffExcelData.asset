@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72d91f5ce162cfe46bc1b80404fa3d5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4cdc186b37c15a6449d8eac9266fee3a, type: 3}
   m_Name: BuffExcelData
   m_EditorClassIdentifier: 
   items:

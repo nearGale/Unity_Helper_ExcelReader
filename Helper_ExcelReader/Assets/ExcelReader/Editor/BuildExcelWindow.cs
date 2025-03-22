@@ -122,7 +122,14 @@ namespace ExcelDataReader.Editor
                 return;
             }
 
-            filePathList.AddRange(excelFileFullPaths);
+            foreach (string filePath in excelFileFullPaths) // excel 临时文件，不管它
+            {
+                if (filePath.Contains("~$"))
+                    continue;
+
+                filePathList.Add(filePath);
+            }
+
             for (int i = 0; i < filePathList.Count; i++)
             {
                 string fileName = filePathList[i].Split('/').LastOrDefault();

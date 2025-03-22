@@ -2,7 +2,7 @@ using ExcelDataReader;
 using System.IO;
 using UnityEngine;
  
-public class ExcelReader : MonoBehaviour
+public class ExcelReaderTest : MonoBehaviour
 {
     void Start()
     {

@@ -96,6 +96,9 @@ namespace ExcelDataReader.Editor
             // 遍历所有 Excel，创建 Asset
             for (int i = 0; i < excelFileFullPaths.Length; i++)
             {
+                if (excelFileFullPaths[i].Contains("~$")) // excel 临时文件不处理
+                    continue;
+
                 CreateOneExcelAsset(excelFileFullPaths[i]);
             }
         }
