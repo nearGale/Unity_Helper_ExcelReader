@@ -1,77 +1,81 @@
 # Unity_Helper_ExcelReader
 
-## Unity Excel 读取工具
+# Unity Excel 读取工具
 
 ![image](https://github.com/user-attachments/assets/f5163bc3-bd0a-4df1-8fd6-703bb4f77018)
 
 
-对于Excel配置文件，生成对应的读取代码、转换为Asset文件。
+对于Excel配置文件，生成对应的读取代码、转换为Asset文件
 
-支持枚举和数组类型。
-
-已屏蔽excel打开时的临时文件（~$xxx.xlsx）
+##### *支持枚举和数组类型  
 
 
-#### 工程结构：
+
+
+### 工程结构：
 ![image](https://github.com/user-attachments/assets/c34ac7d2-966f-4578-8309-94f55247d9f1)
 
 ![image](https://github.com/user-attachments/assets/b0e50fbd-7117-4350-8682-5de0b217c367)
 
 
-#### 编辑器工具：
+### 编辑器工具：
+
+
+已屏蔽excel打开时的临时文件（~$xxx.xlsx）
+
 ![image](https://github.com/user-attachments/assets/74845cf6-807e-4351-a5a6-91a01bafef40)
 ![image](https://github.com/user-attachments/assets/6c62ac1b-a963-4b14-85ed-7e05ed7b124f)
 
 
 
 
-#### 配置、生成读取代码、生成配置asset，默认位置
+### 配置、生成读取代码、生成配置asset，默认位置
 ![image](https://github.com/user-attachments/assets/a44968ae-c23d-4f60-bdaa-ee3f7a608554)
 
 
-#### 表格放置位置：
+### 表格放置位置：
 ![image](https://github.com/user-attachments/assets/51244cc3-473e-408d-9b8f-61831f9f5086)
 
 
 
-#### Excel 生成代码位置：
+### Excel 生成代码位置：
 ![image](https://github.com/user-attachments/assets/034a1213-cbe6-45e0-bdbb-1f16a30adcd5)
 
 
 
-#### 生成后 Asset 位置：
+### 生成后 Asset 位置：
 ![image](https://github.com/user-attachments/assets/3e7792f9-cfe3-4ba8-bb2d-22feeef45779)
 
 
-#### 生成后 Asset:
+### 生成后 Asset:
 ![image](https://github.com/user-attachments/assets/ff519f1b-719c-4077-b23e-8c4cf450bdd7)
 
 
 
 
-#### 测试读取代码：
+### 测试读取代码：
 ![image](https://github.com/user-attachments/assets/55a43bc5-ed69-42fa-869f-65eacfaf0349)
 
 
 
 
-#### partical 重写 ExcelItem toString():
+### partical 重写 ExcelItem toString():
 ![image](https://github.com/user-attachments/assets/487cabf5-adf4-4359-b0ef-70863cf6e524)
 
 
 
  
-#### 表格内容：
+### 表格内容：
  ![image](https://github.com/user-attachments/assets/21ece7b2-9847-4188-a2af-1f66be12e3ff)
 
 
 
-#### 测试读取：
+### 测试读取：
 ![image](https://github.com/user-attachments/assets/2ae22417-8682-4897-9aa4-623c21760805)
 
 
 
-#### 支持枚举和数组：
+### 支持枚举和数组：
 ![image](https://github.com/user-attachments/assets/9e5f0706-16e2-4174-b8b9-5c72817aafcc)
 
 
