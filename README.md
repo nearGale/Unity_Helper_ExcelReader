@@ -2,24 +2,33 @@
 
 ## Unity Excel 读取工具
 
-##### 依赖插件：
-![image](https://github.com/user-attachments/assets/5cb63288-1887-4245-afaf-cea66c0d1ddd)
+##### 工程结构：
+![image](https://github.com/user-attachments/assets/c34ac7d2-966f-4578-8309-94f55247d9f1)
+
+![image](https://github.com/user-attachments/assets/b0e50fbd-7117-4350-8682-5de0b217c367)
 
 
+##### 编辑器工具：
+![image](https://github.com/user-attachments/assets/a5bcebac-73db-4f03-be01-bf3f2b93c82c)
+
+
+
+##### 配置、生成读取代码、生成配置asset，默认位置
+![image](https://github.com/user-attachments/assets/a44968ae-c23d-4f60-bdaa-ee3f7a608554)
 
 
 ##### 表格放置位置：
-![image](https://github.com/user-attachments/assets/64025d3d-71bc-4703-8177-19df795c1af6)
+![image](https://github.com/user-attachments/assets/51244cc3-473e-408d-9b8f-61831f9f5086)
 
 
 
 ##### Excel 生成代码位置：
-![image](https://github.com/user-attachments/assets/8f13919e-51c7-4e12-9faf-84b410c09659)
+![image](https://github.com/user-attachments/assets/034a1213-cbe6-45e0-bdbb-1f16a30adcd5)
 
 
 
 ##### 生成后 Asset 位置：
-![image](https://github.com/user-attachments/assets/f613359e-5527-4ac0-bdc0-2dec525cbcee)
+![image](https://github.com/user-attachments/assets/3e7792f9-cfe3-4ba8-bb2d-22feeef45779)
 
 
 ##### 生成后 Asset:
@@ -29,12 +38,13 @@
 
 
 ##### 测试读取代码：
-![image](https://github.com/user-attachments/assets/008b5e0b-1eca-4075-9f0c-8fa1b6fccad9)
+![image](https://github.com/user-attachments/assets/55a43bc5-ed69-42fa-869f-65eacfaf0349)
+
 
 
 
 ##### partical 重写 ExcelItem toString():
-![image](https://github.com/user-attachments/assets/1517d9f7-9c67-4af7-85cf-9edfc292e561)
+![image](https://github.com/user-attachments/assets/487cabf5-adf4-4359-b0ef-70863cf6e524)
 
 
 
