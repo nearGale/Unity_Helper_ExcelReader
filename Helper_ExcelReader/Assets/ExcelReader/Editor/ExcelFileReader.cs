@@ -59,7 +59,7 @@ namespace ExcelDataReader.Editor
                 {
                     // 写文件，生成 ExcelData.cs
                     if (WriteCodeStrToSave(
-                        ExcelReaderParam.AutoGenExcelDataCodePath,
+                        ExcelReaderParam.GenExcelDataCodePath,
                         excelMediumData.excelName + "ExcelData",
                         classCodeStr))
                     {
@@ -140,7 +140,7 @@ namespace ExcelDataReader.Editor
                         methodInfo.Invoke(null, new object[]
                         {
                             excelMediumData.allItemValueRowList,
-                            ExcelReaderParam.ExcelAssetPath
+                            ExcelReaderParam.GenAssetPath + "/" + ExcelReaderParam.GenAssetPath_UnderResources
                         });
                         // 创建Asset文件成功
                         Debug.Log("<color=green>Auto Create Excel Asset Success : </color>" +

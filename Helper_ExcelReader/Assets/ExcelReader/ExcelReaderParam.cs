@@ -10,10 +10,12 @@ namespace ExcelDataReader
         public static string ExcelFilePath = Application.dataPath + "/ExcelReader/Example/Excel";
 
         /// <summary> 自动生成C#类文件路径 </summary>
-        public static string AutoGenExcelDataCodePath =
-            Application.dataPath + "/ExcelReader/Example/AutoCreateCSCode";
+        public static string GenExcelDataCodePath = Application.dataPath + "/ExcelReader/Example/AutoCreateCSCode";
 
-        /// <summary> 自动生成Asset文件路径 </summary>
-        public static string ExcelAssetPath = "Assets/Resources/ExcelAsset";
+        /// <summary> 自动生成Asset文件路径，默认是在Resources下 </summary>
+        public static string GenAssetPath = "Assets/Resources";
+
+        /// <summary> 自动生成Asset文件路径（Resources之后的路径） </summary>
+        public static string GenAssetPath_UnderResources = "ExcelAsset";
     }
 }
