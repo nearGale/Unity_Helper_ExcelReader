@@ -20,7 +20,7 @@ namespace ExcelDataReader.Editor
         //    ExcelDataReader.CreateAllExcelAsset();
         //}
 
-        [MenuItem("MyTools/Excel Window")]
+        [MenuItem("Tools/Excel Reader")]
         public static void ShowExcelWindow()
         {
             //显示操作窗口方式一
