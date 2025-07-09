@@ -39,6 +39,9 @@ namespace ExcelDataReader.Editor
             //遍历所有Excel，创建C#类
             for (int i = 0; i < excelFileFullPaths.Length; i++)
             {
+                if (excelFileFullPaths[i].Contains("~$"))
+                    continue; // 跳过临时文件
+                    
                 ReadOneExcelToCode(excelFileFullPaths[i]);
             }
         }
